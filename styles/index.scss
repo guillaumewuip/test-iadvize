@@ -1,13 +1,17 @@
 @import 'variables';
+@import 'colors';
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
   font-family: "Helvetica Neue", Helvetica, Aria, sans-serif;
   font-size: 14px;
+  background: $whiteGrey;
+  min-height: 100%;
 }
 
 .app {
