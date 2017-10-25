@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
-import MessageBox from './components/MessageBox';
+import configureStore from './store';
+import App from './App';
 
 import '../styles/index.scss';
 
 console.log('🚀 Starting app');
 
+const store = configureStore();
+
 ReactDOM.render(
-  <div className="message-box-container">
-    <MessageBox />
-    <MessageBox />
-  </div>,
+  <Provider store={store}><App /></Provider>,
   document.querySelector('.js-app')
 );
