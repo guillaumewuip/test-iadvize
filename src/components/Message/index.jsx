@@ -3,7 +3,9 @@ import './Message.scss';
 
 const Message = ({ text }) => (
   <div className="message">
-    {text}
+    <div className="message-tag">
+      {text}
+    </div>
   </div>
 );
 
