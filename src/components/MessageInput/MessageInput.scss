@@ -15,6 +15,7 @@
     padding: 1em;
     margin-right: 1em;
     font-size: 1.2em;
+    outline: 0;
   }
 
   .message-input-send {
@@ -30,6 +31,7 @@
   font-size: 1.4em;
   font-weight: bold;
   color: $white;
+  outline: 0;
 
   &:hover {
     -webkit-animation: MovingBackground 6s ease infinite;
