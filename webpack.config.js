@@ -24,9 +24,13 @@ module.exports = {
             options: {
               presets: [
                 'es2017',
+                'es2015',
                 'stage-2',
                 'react'
               ],
+              plugins: [
+                'transform-es2015-parameters',
+              ]
             },
         }
         ],

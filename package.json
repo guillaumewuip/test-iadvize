@@ -28,6 +28,7 @@
     "webpack-dev-server": "^2.9.3"
   },
   "dependencies": {
+    "babel-plugin-transform-es2015-parameters": "^6.24.1",
     "classnames": "^2.2.5",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
