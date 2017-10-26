@@ -1,16 +1,38 @@
 @import "../../../styles/variables";
+@import "../../../styles/colors";
 
 .message-box-container {
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 }
 
   .message-box {
     flex: 1;
     flex-basis: 50%;
-    padding: 0 1em;
+    padding: 2em;
 
     @media screen and (max-width: $breakpoint-small) {
       flex-basis: 100%;
     }
   }
+
+    .message-box-title {
+      font-weight: 500;
+      color: $grey;
+      margin-bottom: 1em;
+    }
+
+    .messages-list {
+      height: 50vh;
+      overflow-y: scroll;
+      padding: 0 1em;
+      display: flex;
+      flex-direction: column-reverse; // keep scroll to bottom
+
+      @media screen and (max-width: $breakpoint-small) {
+        height: 40vh;
+      }
+    }
