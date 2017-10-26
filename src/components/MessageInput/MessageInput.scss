@@ -1,4 +1,5 @@
 @import '../../../styles/colors';
+@import '../../../styles/colorBackground';
 
 .message-input {
   display: flex;
@@ -23,8 +24,7 @@
   }
 
 .button {
-  background: linear-gradient(270deg, $green, $yellowGreen);
-  background-size: 400% 400%;
+  @extend .green-gradient-background;
   border: none;
   border-radius: 1rem;
   padding: .6em 1.2em;
@@ -34,30 +34,9 @@
   outline: 0;
 
   &:hover {
-    -webkit-animation: MovingBackground 6s ease infinite;
-    -moz-animation: MovingBackground 6s ease infinite;
-    animation: MovingBackground 6s ease infinite;
+    @extend .moving-background;
     box-shadow: 1px 2px 2px $lightGrey;
     cursor: pointer;
   }
 }
 
-// From https://www.gradient-animator.com/
-
-@-webkit-keyframes MovingBackground {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-
-@-moz-keyframes MovingBackground {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-
-@keyframes MovingBackground {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}

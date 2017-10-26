@@ -1,4 +1,5 @@
 @import '../../../styles/colors';
+@import '../../../styles/colorBackground';
 
 .message {
   width: 80%;
@@ -21,10 +22,12 @@
   }
 
   .message-tag.mod-color {
+    @extend .green-gradient-background;
     color: $white;
+  }
 
-    // From https://uigradients.com/#Decent
-    background: #00b09b; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, $green, $yellowGreen);
-    background: linear-gradient(to bottom, $green, $yellowGreen);
+  .message-tag.mod-rainbow {
+    @extend .rainbow-background;
+    @extend .moving-background;
+    color: $white;
   }

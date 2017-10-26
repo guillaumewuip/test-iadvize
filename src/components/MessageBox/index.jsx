@@ -4,6 +4,10 @@ import MessageInput from '../MessageInput';
 
 import './MessageBox.scss';
 
+const isMessageFromUser = (message, user) => message.from === user;
+
+const isIAdvize = (message) => /iadvize/i.test(message.text);
+
 const MessageBox = ({ from, messages, send }) => (
   <div className="message-box">
     <h1 className="message-box-title">{from}</h1>
@@ -14,8 +18,9 @@ const MessageBox = ({ from, messages, send }) => (
           <Message
             key={message.id}
             text={message.text}
-            color={message.from === from}
-            right={message.from === from}
+            color={isMessageFromUser(message, from)}
+            rainbow={isIAdvize(message)}
+            right={isMessageFromUser(message, from)}
           />
         ))
       }
