@@ -27,10 +27,8 @@
 
     .messages-list {
       height: 50vh;
-      overflow-y: scroll;
+      overflow-y: auto;
       padding: 0 1em;
-      display: flex;
-      flex-direction: column-reverse; // keep scroll to bottom
 
       @media screen and (max-width: $breakpoint-small) {
         height: 40vh;

@@ -8,25 +8,33 @@ const isMessageFromUser = (message, user) => message.from === user;
 
 const isIAdvize = (message) => /iadvize/i.test(message.text);
 
-const MessageBox = ({ from, messages, send }) => (
-  <div className="message-box">
-    <h1 className="message-box-title">{from}</h1>
-    <div className="messages-list">
-      {messages
-        .reverse() // for css hack to keep scroll to bottom
-        .map((message) => (
-          <Message
-            key={message.id}
-            text={message.text}
-            color={isMessageFromUser(message, from)}
-            rainbow={isIAdvize(message)}
-            right={isMessageFromUser(message, from)}
-          />
-        ))
-      }
-    </div>
-    <MessageInput clickHandler={send} />
-  </div>
-);
+class MessageBox extends React.Component {
+  componentDidUpdate() {
+    // keep list scroll position to bottom
+    this.list.scrollTop = this.list.scrollHeight;
+  }
+
+  render() {
+    return (
+      <div className="message-box">
+        <h1 className="message-box-title">{this.props.from}</h1>
+        <div className="messages-list" ref={(div) => { this.list = div; }}>
+          {this.props.messages
+            .map((message) => (
+              <Message
+                key={message.id}
+                text={message.text}
+                color={isMessageFromUser(message, this.props.from)}
+                rainbow={isIAdvize(message)}
+                right={isMessageFromUser(message, this.props.from)}
+              />
+            ))
+          }
+        </div>
+        <MessageInput clickHandler={this.props.send} />
+      </div>
+    );
+  }
+}
 
 export default MessageBox;
