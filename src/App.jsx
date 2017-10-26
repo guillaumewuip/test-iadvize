@@ -5,6 +5,7 @@ import MessageBox from './components/MessageBox';
 
 import { newMessage } from './actions';
 
+// only keep messages concerning the user
 const filterMessages = (messages, who) => messages
   .filter((message) => message.from === who || message.to === who);
 

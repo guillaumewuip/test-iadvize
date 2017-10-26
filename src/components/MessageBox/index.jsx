@@ -25,8 +25,8 @@ class MessageBox extends React.Component {
                 key={message.id}
                 text={message.text}
                 color={isMessageFromUser(message, this.props.from)}
-                rainbow={isIAdvize(message)}
                 right={isMessageFromUser(message, this.props.from)}
+                rainbow={isIAdvize(message)}
               />
             ))
           }

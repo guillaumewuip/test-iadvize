@@ -2,6 +2,7 @@ import {
   NEW_MESSAGE
 } from './actions';
 
+// create message from action
 const buildMessage = (action) => ({
   id:   action.id,
   text: action.text,
